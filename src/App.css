@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Highlighted text for search */
+mark,
+.bg-warning {
+  background-color: #fff3cd !important;
+  color: #664d03 !important;
+  padding: 1px 2px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+/* Product Card Styles */
+.product-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Small notification styles for add to cart action */
+.small-notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 200px;
+  text-align: center;
+}
+
+.small-notification.show {
+  transform: translateX(0);
+}
+
+.small-notification.fade-out {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Modal notification styles */
+.modal-notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 10001; /* Higher than modal z-index */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 200px;
+  text-align: center;
+}
+
+.modal-notification.show {
+  transform: translateX(0);
+}
+
+.modal-notification.fade-out {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .small-notification,
+  .modal-notification {
+    right: 10px;
+    top: 70px;
+    font-size: 12px;
+    padding: 6px 12px;
+    max-width: 180px;
+  }
+}
+
+/* Success state disables cart button */
+.btn-success {
+  pointer-events: none;
+}
+
+/* Animate React logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
